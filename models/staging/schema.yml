@@ -4,7 +4,11 @@ sources:
   - name: staging
     database: kafka-streaming-418018 # BigQuery project id
     schema: company_house # BigQuery data set
-
     tables:
       - name: company_house_core_partitioned
       - name: company_house_stream
+  - name: dbt_tables
+    database: kafka-streaming-418018 # BigQuery project id
+    schema: dbt_arbenkqiku # BigQuery data set
+    tables:
+      - name: get_last_timestamp
