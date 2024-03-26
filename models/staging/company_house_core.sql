@@ -14,13 +14,9 @@ select
     postal_code,
     date(date_trunc(date_of_creation, month)) as month_of_creation,
     -- sometimes the same company is published more than once. With this, we ensure that we take only the last value
-    row_number() over (partition by company_number order by stream.published_at desc) as row_num
+    row_number() over (partition by company_number order by published_at desc) as row_num
 from
-    {{source("staging", "company_house_stream")}} stream
-join
-    -- take only the new rows, the one with a timestamp bigger than the last one
-    {{source("dbt_tables", "get_last_timestamp")}} last_timestamp
-    on stream.published_at > last_timestamp.published_at
+    {{source("dbt_tables", "snapshot_streamed_data")}}
 )
 
 select

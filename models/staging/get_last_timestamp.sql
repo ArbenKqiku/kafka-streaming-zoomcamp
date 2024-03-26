@@ -7,7 +7,7 @@
 select
     published_at
 from
-    {{ source('staging', 'company_house_stream')}}
+    {{ source('dbt_tables', 'snapshot_streamed_data')}}
 order by
     published_at desc
 limit

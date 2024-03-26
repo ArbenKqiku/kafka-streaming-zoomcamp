@@ -12,3 +12,4 @@ sources:
     schema: dbt_arbenkqiku # BigQuery data set
     tables:
       - name: get_last_timestamp
+      - name: snapshot_streamed_data
