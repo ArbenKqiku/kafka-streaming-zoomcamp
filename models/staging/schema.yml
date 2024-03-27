@@ -9,7 +9,7 @@ sources:
       - name: company_house_stream
   - name: dbt_tables
     database: kafka-streaming-418018 # BigQuery project id
-    schema: dbt_arbenkqiku # BigQuery data set
+    schema: prod # BigQuery data set
     tables:
       - name: get_last_timestamp
       - name: snapshot_streamed_data
