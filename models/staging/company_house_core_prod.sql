@@ -16,7 +16,7 @@ select
     -- sometimes the same company is published more than once. With this, we ensure that we take only the last value
     row_number() over (partition by company_number order by published_at desc) as row_num
 from
-    {{source("prod", "snapshot_streamed_data")}}
+    {{source("production", "snapshot_streamed_data")}}
 )
 
 select

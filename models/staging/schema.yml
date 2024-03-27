@@ -7,7 +7,7 @@ sources:
     tables:
       - name: company_house_core_partitioned
       - name: company_house_stream
-  - name: dbt_tables
+  - name: production
     database: kafka-streaming-418018 # BigQuery project id
     schema: prod # BigQuery data set
     tables:
