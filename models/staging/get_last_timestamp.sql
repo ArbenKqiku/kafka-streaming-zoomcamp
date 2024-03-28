@@ -7,8 +7,8 @@
 select
     published_at
 from
-    {{ source('production', 'snapshot_streamed_data')}}
+    {{ source('staging', 'company_house_stream')}}
 order by
-    published_at desc
+    published_at
 limit
     1
